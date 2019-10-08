@@ -4,7 +4,5 @@ From [here](http://codekata.com)
 - [x] Karate-chop
 - [x] How big? How fast?
 - [x] Data munging
-
-
-
+- [x] Bloom filters (could add an improved version though)
 
