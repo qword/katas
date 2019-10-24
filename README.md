@@ -5,4 +5,5 @@ From [here](http://codekata.com)
 - [x] How big? How fast?
 - [x] Data munging
 - [x] Bloom filters (could add an improved version though)
+- [x] Guest kata: sort Kings names
 
