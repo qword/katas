@@ -6,4 +6,4 @@ From [here](http://codekata.com)
 - [x] Data munging
 - [x] Bloom filters (could add an improved version though)
 - [x] Guest kata: sort Kings names
-
+- [x] Anagrams
