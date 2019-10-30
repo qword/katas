@@ -73,12 +73,8 @@ class Kings {
   }
 
   List<String> sortKings(final List<String> input) {
-
-    final List<King> kings = input.stream()
+    return input.stream()
         .map(King::new)
-        .collect(Collectors.toList());
-
-    return kings.stream()
         .sorted()
         .map(King::getFullName)
         .collect(Collectors.toList());
