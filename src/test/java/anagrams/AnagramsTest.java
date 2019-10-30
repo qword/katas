@@ -3,11 +3,9 @@ package anagrams;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import countwords.CountWords;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -38,22 +36,21 @@ class AnagramsTest {
 
     final Anagrams anagrams = new Anagrams(words);
 
-    final Set<String> foundAnagrams = new HashSet<>();
-    for (final String word : words) {
-      final List<String> anagramsForWord = anagrams.findAnagrams(word);
-      if (anagramsForWord.size() > 1) {
-        foundAnagrams.add(word);
-      }
-    }
+
+    final Set<String> foundAnagrams = words.stream()
+        .filter(word -> anagrams.findAnagrams(word).size() > 1)
+        .collect(Collectors.toSet());
 
     assertEquals(48162, foundAnagrams.size());
+
+    final Set<String> uniqueSets = foundAnagrams.stream()
+        .map(Anagrams::getSortedWord)
+        .collect(Collectors.toSet());
+
+    assertEquals(20683, uniqueSets.size());
   }
-
-  // TODO: additionally check that the total amount of sets is 20683
-
 
   private boolean areUnorderedListsEqual(final List<String> a, final List<String> b) {
     return (a.size() == b.size() && a.containsAll(b) && b.containsAll(a));
   }
-
 }

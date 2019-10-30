@@ -21,7 +21,7 @@ class Anagrams {
         .collect(Collectors.groupingBy(Anagrams::getSortedWord));
   }
 
-  private static String getSortedWord(final String input) {
+  static String getSortedWord(final String input) {
     return input
         .codePoints()
         .sorted()
